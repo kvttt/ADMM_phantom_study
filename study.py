@@ -192,7 +192,7 @@ if __name__ == "__main__":
 
         # print
         suffix = f'tv_{tv_weight}_r_{rho0}_g_{gamma}_a_{alpha_start}_{alpha_end}'
-        print(f'Running with tv_weight={tv_weight}, rho0={rho0}, gamma={gamma}, alpha_start={alpha_start}, alpha_end={alpha_end}')
+        # print(f'Running with tv_weight={tv_weight}, rho0={rho0}, gamma={gamma}, alpha_start={alpha_start}, alpha_end={alpha_end}')
 
         # forward and adjoint operators 
         def build_A_operator(rho, factor, im_shape):
@@ -344,6 +344,7 @@ if __name__ == "__main__":
     cosine = True
     lst = list(product(tv_weight_lst, rho0_lst, gamma_lst, alpha_start_lst, alpha_end_lst))
     for tv_weight, rho0, gamma, alpha_start, alpha_end in lst:
+        print(f'alpha_end = {alpha_end}')
         run(tv_weight, rho0, gamma, alpha_start, alpha_end, show_rho_alpha_plot=True, cosine=cosine)
 
     # 3. to demonstrate the effect of rho schedule,
@@ -359,4 +360,5 @@ if __name__ == "__main__":
     cosine = True
     lst = list(product(tv_weight_lst, rho0_lst, gamma_lst, alpha_start_lst, alpha_end_lst))
     for tv_weight, rho0, gamma, alpha_start, alpha_end in lst:
+        print(f'gamma = {gamma}')
         run(tv_weight, rho0, gamma, alpha_start, alpha_end, show_rho_alpha_plot=True, cosine=cosine)
