@@ -13,12 +13,12 @@ Method
 ------
 
 Each ADMM iteration consists of three steps:
-1. **x-update**: Solve the minimization problem for the primal variable \(x\) while keeping the dual variable \(z\) fixed:
+1. **x-update**: Solve the minimization problem for the primal variable $x$ while keeping the primal variable $z$ fixed:
     <p align="center">
     $$x^{(k+1)} = \underset{x}{\arg\min} f(x) + \frac{\rho^{(k+1)}}{2} \bigl\Vert x - \bigl(z^{(k)} - u^{(k)}\bigr) \bigr\Vert_2^2.$$
     </p>
 
-2. **z-update**: Solve the minimization problem for the dual variable \(z\) while keeping the primal variable \(x\) fixed:
+2. **z-update**: Solve the minimization problem for the primal variable $z$ while keeping the primal variable $x$ fixed:
     <p align="center">
     $$z^{(k+1)} = \underset{z}{\arg\min} R(z) + \frac{\rho^{(k+1)}}{2} \bigl\Vert z - \bigl(x^{(k+1)} + u^{(k)}\bigr) \bigr\Vert_2^2,$$
     </p>
@@ -33,7 +33,7 @@ Each ADMM iteration consists of three steps:
     $$\quad z^{(k+1)} = \alpha^{(k+1)} \cdot \mathcal{D}\Bigl(x^{(k+1)} + u^{(k)}\Bigr) + \Bigl(1 - \alpha^{(k+1)}\Bigr) \cdot \Bigl(x^{(k+1)} + u^{(k)}\Bigr).$$
     </p>
 
-3. **u-update**: Update the dual variable \(u\):
+3. **u-update**: Update the dual variable $u$:
     <p align="center">
     $$u^{(k+1)} = u^{(k)} + \Bigl( x^{(k+1)} - z^{(k+1)} \Bigr)$$
     </p>
