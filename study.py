@@ -169,7 +169,7 @@ if __name__ == "__main__":
             show_rho_alpha_plot=True, cosine=False):
         # configs
         high_res_shape = (512, 512)  # simulated phantom fov
-        R = 4  # undersampling factor 
+        R = 4  # undersampling factor
         max_iter_admm = 20  # max number of ADMM iterations
         max_iter_lsqr = 20  # max number of LSQR iterations
         tol_lsqr = 1e-5  # tolerance for LSQR
